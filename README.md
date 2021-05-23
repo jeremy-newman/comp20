@@ -24,3 +24,6 @@
     URL: Used temporary URL for submission
 # Homework 14 - Stock Ticker App
     URL: https://stock-ticker-app1.herokuapp.com
+# Javascript Challenges
+    Checkbox Challenge URL: https://jeremy-newman.github.io/checkbox-challenge/
+    Jump Challenge URL: https://jeremy-newman.github.io/jump-challenge/
