@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>API FUN</title>
+        <style type="text/css">
+            #header {
+                background-color: #6495ed;
+                padding: 10px;
+                text-align: center;
+                font-size: 40px;
+                font-family: sans-serif;
+            }
+            #photo {
+                align: center;
+            }
+            body {
+                text-align: center;
+                font-family: optima;
+                background-color: #D3D3D3;
+            }
+        </style>
+        <script language = javascript>
+            function getDog() {
+                request = new XMLHttpRequest();
+                console.log("1 - request object created");
+                //get the URL
+                request.open("GET", "https://dog.ceo/api/breeds/image/random", true);
+                console.log("2 - opened request file");
+                //event handler
+                request.onreadystatechange = function() {
+                    if ((request.readyState == 4) && (request.status == 200)) {
+                        console.log("5 - response received");
+                        result = request.responseText;
+                        //dog image in JSON
+                        dog = JSON.parse(result);
+                        //gets the actual photo of the dog
+                        photo = "<img src='" + dog.message + "' width = '600px'>";
+                        //sets the innerHTML to the photo
+                        document.getElementById("photo").innerHTML = photo;
+                    }
+                }
+                //send the request
+                request.send();
+                console.log("4 - Request sent");
+            }
+        </script>
+    </head>
+    <body onload = "getDog()">
+        <div id = "header">
+            Assignment 10: API Fun
+        </div><br>
+        <h1>Dog</h1>
+    	<div id = "data"></div>
+        <div id = "name"></div>
+        <div id = "photo"></div>
+        <p>
+            The API that I selected fetches a random image of a dog from a
+            database. The website that I got this API from is
+            <a href = "https://dog.ceo/dog-api/">https://dog.ceo/dog-api/</a>.
+            I used the XMLHttpRequest function and then got the URL using a
+            request function. I then used the onreadystatechange event handler.
+            If the readyState and status were at the correct values, I used the
+            API to get the random image of the dog in JSON format. I then
+            displayed that image within my HTML code. This application could be
+            helpful for someone who is having a hard time and would just want
+            to cycle through some cute photos of dogs. It could also be helpful
+            to quiz yourself on dog breeds. You could try to guess what breed
+            the dog is by seeing a picture.
+        </p>
+    </body>
+</html>
