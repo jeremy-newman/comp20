@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Lottery</title>
+        <style type="text/css">
+            #header {
+                background-color: #6495ed;
+                padding: 10px;
+                text-align: center;
+                font-size: 40px;
+                font-family: sans-serif;
+            }
+            #script {
+                font-size: 20px;
+                font-family: sans-serif;
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <div id = "header">
+            Assignment 5: The Lottery!
+        </div><hr>
+        <div id = "script">
+            <script type="text/javascript">
+                var winning_numbers = new Array(5);
+                for (var i = 0; i < 5; i++) {
+                    number = Math.floor(Math.random() * 48) + 1;
+                    if (winning_numbers.indexOf(number) > -1) {
+                        i--;
+                    }
+                    else {
+                        winning_numbers[i] = number;
+                    }
+                }
+                winning_lucky_ball = Math.floor(Math.random() * 18) + 1;
+                winning_numbers.sort(function(a, b){return a-b});
+                user_input = prompt("Please enter your first five numbers, each separated by a space.");
+                user_numbers = user_input.split(" ");
+                user_numbers.sort(function(a, b){return a-b});
+                user_lucky_ball = prompt("Please enter your lucky ball number.");
+                document.write("Your numbers are: ");
+                for (var i = 0; i < 5; i++) {
+                    document.write(user_numbers[i] + " ");
+                }
+                document.write("<br /> Your lucky ball is: " + user_lucky_ball + "<br />" + "<br />");
+                document.write("The winning numbers are: ");
+                for (var i = 0; i < 5; i++) {
+                    document.write(winning_numbers[i] + " ");
+                }
+                document.write("<br /> The winnng lucky ball is: " + winning_lucky_ball + "<br />" + "<br />");
+                var num_correct = 0;
+                for (var i = 0; i < 5; i++) {
+                    for (var j = 0; j < 5; j++) {
+                        if (winning_numbers[i] == user_numbers[j]) {
+                            num_correct++;
+                            break;
+                        }
+                    }
+                }
+                document.write("The number of balls that you have correct is: " + num_correct + "<br />");
+                var luck = false;
+                if (user_lucky_ball == winning_lucky_ball) {
+                    document.write("Your lucky ball matched the winning lucky ball!" + "<br />" + "<br />");
+                    luck = true;
+                }
+                else {
+                    document.write("Your lucky ball did not match the winning lucky ball." + "<br />" + "<br />");
+                }
+                if (num_correct == 0) {
+                    if (luck) {
+                        document.write("Congratulations! You have won $4!<br />");
+                    }
+                    else {
+                        document.write("Sorry! You didn't win any money! Better luck next time!<br />");
+                    }
+                }
+                else if (num_correct == 1) {
+                    if (luck) {
+                        document.write("Congratulations! You have won $6!<br />");
+                    }
+                    else {
+                        document.write("Sorry! You didn't win any money! Better luck next time!<br />");
+                    }
+                }
+                else if (num_correct == 2) {
+                    if (luck) {
+                        document.write("Congratulations! You have won $25!<br />");
+                    }
+                    else {
+                        document.write("Congratulations! You have won $3!<br />");
+                    }
+                }
+                else if (num_correct == 3) {
+                    if (luck) {
+                        document.write("Congratulations! You have won $150!<br />");
+                    }
+                    else {
+                        document.write("Congratulations! You have won $20!<br />");
+                    }
+                }
+                else if (num_correct == 4) {
+                    if (luck) {
+                        document.write("Congratulations! You have won $5000!<br />");
+                    }
+                    else {
+                        document.write("Congratulations! You have won $200!<br />");
+                    }
+                }
+                else if (num_correct == 5) {
+                    if (luck) {
+                        document.write("Congratulations! You have won $7,000 a WEEK for LIFE!<br />");
+                    }
+                    else {
+                        document.write("Congratulations! You have won $25,000 a YEAR for LIFE!<br />");
+                    }
+                }
+            </script>
+        </div>
+    </body>
+</html>
