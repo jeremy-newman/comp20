@@ -1,0 +1,64 @@
+{"setlist": 
+    [
+        {
+            "song": "Fearless",
+            "artist": "Taylor Swift",
+            "genre": ["Country", "Pop"],
+            "release year": "2008"
+        },
+        {
+            "song": "Evil Woman",
+            "artist": "Electric Light Orchestra",
+            "genre": ["Blues Rock", "Rock"],
+            "release year": "1975"
+        },
+        {
+            "song": "Thinking Out Loud",
+            "artist": "Ed Sheeran",
+            "genre": ["Pop"],
+            "release year": "2014"
+        },
+        {
+            "song": "The Longest Time",
+            "artist": "Billy Joel",
+            "genre": ["Doo-wop", "Rock"],
+            "release year": "1983"
+        },
+        {
+            "song": "Fool in the Rain",
+            "artist": "Led Zeppelin",
+            "genre": ["Rock", "Classic Rock"],
+            "release year": "1979"
+        },
+        {
+            "song": "Dream On",
+            "artist": "Aerosmith",
+            "genre": ["Rock"],
+            "release year": "1973"
+        },
+        {
+            "song": "Black Smoke Rising",
+            "artist": "Greta Van Fleet",
+            "genre": ["Rock", "Alt-Rock"],
+            "release year": "2017"
+        },
+        {
+            "song": "Fitzpleasure",
+            "artist": "Alt-J",
+            "genre": ["Alternative"],
+            "release year": "2012"
+        },
+        {
+            "song": "25 or 6 to 4",
+            "artist": "Chicago",
+            "genre": ["Classic Rock"],
+            "release year": "1970"
+        },
+        {
+            "song": "Let it Be",
+            "artist": "The Beatles",
+            "genre": ["Classic Rock"],
+            "release year": "1970"
+        }
+    ]
+}

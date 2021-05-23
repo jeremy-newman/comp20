@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>JSON Song List</title>
+        <style type="text/css">
+            #header {
+                background-color: #6495ed;
+                padding: 10px;
+                text-align: center;
+                font-size: 40px;
+                font-family: sans-serif;
+            }
+            body {
+                font-family: optima;
+                background-color: #D3D3D3;
+            }
+            .section_header {
+                font-size: 30px;
+            }
+        </style>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+        <script language = "javascript">
+            //This function is called multiple times and it hides all of the
+            //songs below the filter section
+            function hideAll() {
+                for (i = 0; i < 10; i++) {
+                    $("#filter" + i).hide();
+                }
+            }
+            //event handler when site opens
+            $(document).ready(function() {
+                hideAll();
+                request = new XMLHttpRequest();
+                //use the setlist that I created
+                request.open("GET", "https://jeremy-newman.github.io/json-song-list/setlist.json", true);
+                request.onreadystatechange = function() {
+                    if ((request.readyState == 4) && (request.status == 200)) {
+                        result = request.responseText;
+                        //gets the JSON version
+                        data = JSON.parse(result);
+                        set = "";
+                        //adds the list of songs in a nice format to a string
+                        for(i = 0; i < 10; i++) {
+                            set += "Song: " + data["setlist"][i]["song"] + "<br>";
+                            set += "Artist: " + data["setlist"][i]["artist"] + "<br>";
+                            set += "Genre(s): ";
+                            for (j = 0; j < data["setlist"][i]["genre"].length - 1; j++) {
+                                set += data["setlist"][i]["genre"][j] + ", ";
+                            }
+                            set += data["setlist"][i]["genre"][j] + "<br>";
+                            set += "Release Year: " + data["setlist"][i]["release year"] + "<br><br>";
+                        }
+                        //sets the innerHTML of the documents to the JSON
+                        //raw string and the formatted setlist
+                        document.getElementById("raw_string").innerHTML = result;
+                        document.getElementById("set").innerHTML = set;
+                    }
+                    //when the button is clicked
+                    $("[name = 'button']").click(function() {
+                        hideAll(); //hide all the songs under
+                        for (i = 0; i < 10; i++) {
+                            //show the songs that have that genre
+                            for(j = 0;  j < data["setlist"][i]["genre"].length; j++) {
+                                if(data["setlist"][i]["genre"][j] == document.forms[0].filter.value) {
+                                        $("#filter" + i).show();
+                                    }
+                            }
+                        }
+                    });
+                    //display the songs
+                    for (i = 0; i < 10; i++) {
+                        $("#filter" + i).text(data["setlist"][i]["song"] + " by " + data["setlist"][i]["artist"]);
+                    }
+                }
+                //send the request
+                request.send();
+            });
+        </script>
+    </head>
+    <body>
+        <div id = "header">
+            Assignment 9: JSON Song List
+        </div><br>
+        <div class = section_header><strong>JSON Raw String</strong></div><br>
+        <div id = "raw_string">
+        </div><br><br>
+        <div class = section_header><strong>Setlist</strong></div><br>
+        <div id = "set">
+        </div><br>
+        <div class = section_header><strong>Filter by genre</strong></div><br>
+        <form>
+            <!-- drop down menu for filter options -->
+            <select name = "filter">
+                <option value = "Country">Country</option>
+                <option value = "Blues Rock">Blues Rock</option>
+                <option value = "Pop">Pop</option>
+                <option value = "Rock">Rock</option>
+                <option value = "Doo-wop">Doo-wop</option>
+                <option value = "Classic Rock">Classic Rock</option>
+                <option value = "Alt-Rock">Alt-Rock</option>
+                <option value = "Alternative">Alternative</option>
+            </select>
+            <input type = "button" value = "Filter" name = "button">
+        </form>
+        <div id = "filter0"></div>
+        <div id = "filter1"></div>
+        <div id = "filter2"></div>
+        <div id = "filter3"></div>
+        <div id = "filter4"></div>
+        <div id = "filter5"></div>
+        <div id = "filter6"></div>
+        <div id = "filter7"></div>
+        <div id = "filter8"></div>
+        <div id = "filter9"></div>
+        <br><br><br><br>
+    </body>
+</html>
