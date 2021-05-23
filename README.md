@@ -28,6 +28,6 @@
     Checkbox Challenge URL: https://jeremy-newman.github.io/checkbox-challenge/
     Jump Challenge URL: https://jeremy-newman.github.io/jump-challenge/
 # Bistro-du-Soleil
-    URL:
+    URL: https://jeremy-newman.github.io/bistro-du-soleil/
 # Calm and Collected Calendar
-    URL: 
+    URL: http://seixaswebsite.infinityfreeapp.com/final/sign_in.php
