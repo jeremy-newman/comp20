@@ -27,3 +27,7 @@
 # Javascript Challenges
     Checkbox Challenge URL: https://jeremy-newman.github.io/checkbox-challenge/
     Jump Challenge URL: https://jeremy-newman.github.io/jump-challenge/
+# Bistro-du-Soleil
+    URL:
+# Calm and Collected Calendar
+    URL: 
