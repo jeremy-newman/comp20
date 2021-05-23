@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Checkbox Challenge</title>
+        <style type="text/css">
+            #header {
+                background-color: #6495ed;
+                padding: 10px;
+                text-align: center;
+                font-size: 40px;
+                font-family: sans-serif;
+            }
+            #form {
+                text-align: center;
+            }
+            #uncheckall_words {
+                display: none;
+            }
+        </style>
+    </head>
+    <body>
+        <div id = "header">
+            Challenge: Checkbox
+        </div><br>
+        <div style = "font-size: 30px;font-family: sans-serif;text-align: center;">
+            <strong>Enjoy your Checking!</strong>
+        </div><br><br>
+        <form id = form>
+            <span id = checkall_words>Check all<input type = "checkbox" onclick = "toggle()" value = "on" id = "checkall"></span><br>
+            <span id = uncheckall_words> Uncheck all<input type = "checkbox" onclick = "toggle()" value = "off" id = "uncheckall"></span><br>
+            Turkey<input type = "checkbox" id = "check1"><br>
+            Bacon<input type = "checkbox" id = "check2"><br>
+            Lettuce<input type = "checkbox" id = "check3"><br>
+            Tomato<input type = "checkbox" id = "check4"><br>
+        </form>
+        <script language="javascript">
+            function toggle() {
+                var checkall = document.getElementById("checkall");
+                var uncheckall = document.getElementById("uncheckall");
+                var check1 = document.getElementById("check1");
+                var check2 = document.getElementById("check2");
+                var check3 = document.getElementById("check3");
+                var check4 = document.getElementById("check4");
+                if (checkall.value == "on") {
+                    checkall.value = "off";
+                    document.getElementById("checkall").label = "Uncheck All";
+                    document.getElementById("uncheckall_words").style.display = "inline-block";
+                    document.getElementById("checkall_words").style.display = "none";
+                    check1.checked = true;
+                    check2.checked = true;
+                    check3.checked = true;
+                    check4.checked = true;
+                    uncheckall.checked = false;
+                }
+                else {
+                    checkall.value = "on";
+                    document.getElementById("checkall_words").style.display = "inline-block";
+                    document.getElementById("uncheckall_words").style.display = "none";
+                    check1.checked = false;
+                    check2.checked = false;
+                    check3.checked = false;
+                    check4.checked = false;
+                    checkall.checked = false;
+                }
+            }
+        </script>
+    </body>
+</html>

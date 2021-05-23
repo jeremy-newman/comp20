@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Jump Button Challenge</title>
+        <style type="text/css">
+            #header {
+                background-color: #6495ed;
+                padding: 10px;
+                text-align: center;
+                font-size: 40px;
+                font-family: sans-serif;
+            }
+            #form {
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <div id = "header">
+            Challenge: Jump Button
+        </div><br>
+        <div style = "font-size: 30px;font-family: sans-serif;text-align: center;">
+            <strong>Enjoy the button!</strong>
+        </div><br><br>
+        <form id = form>
+            <input type = "text" value = "" id = "left">
+            <input type = "button" value = "JUMP >" onclick = "toggle()" id = "jump">
+            <input type = "text" value = "" id = "right">
+            <br>
+        </form>
+        <script language="javascript">
+            function toggle() {
+                var button = document.getElementById("jump");
+                var left = document.getElementById("left");
+                var right = document.getElementById("right");
+                if (button.value == "JUMP >") {
+                    button.value = "< JUMP";
+                    right.value = left.value;
+                    left.value = "";
+                }
+                else {
+                    button.value = "JUMP >";
+                    left.value = right.value;
+                    right.value = "";
+                }
+            }
+        </script>
+    </body>
+</html>
