@@ -1,0 +1,74 @@
+<style type="text/css">
+    html{}
+    #header{
+        width: 100%;
+        background-color: #000000;
+        padding-top: 16px;
+        padding-bottom: 16px;
+        color: #ffffff;
+        font-size: 16px;
+        position: fixed;
+        top: 0;
+        left: 0;
+        padding-left: 32px;
+        z-index: 10;
+    }
+    #body{
+        font-family: sans-serif;
+        background-image: url("aerial.jpg");
+        background-size: cover;
+        background-attachment: fixed;
+        overflow: scroll;
+    }
+    #nav{
+        clear: both;
+        padding-top: 16px;
+        padding-bottom: 16px;
+        margin-top: 48px;
+        font-size: 16px;
+        background-color: #c8decb;
+        color: #000000;
+        position: fixed;
+        top: 0;
+        left: 0;
+        padding-left: 32px;
+        width: 100%;
+        z-index: 10;
+    }
+    nav * {
+        display: inline;
+    }
+    #company{
+        font-size: 24px;
+        font-weight: bold;
+    }
+    #footer{
+        font-size: 16px;
+        background-color: #000000;
+        color: #ffffff;
+        bottom:0;
+        left:0;
+        padding-top: 8;
+        padding-bottom: 8;
+        position: fixed;
+        width: 100%;
+        text-align: center;
+    }
+    #group a:hover {
+        background-color: #ffffff;
+    }
+    #active a {
+        font-weight: bold;
+        background-color: #ffcccc;
+    }
+    #page-name{
+        font-size: 40px;
+        color: #ffffff;
+        margin-top: 120px;
+        margin-left: 50px;
+        text-align: left;
+        position: absolute;
+        display:block;
+        font-family: cursive;
+    }
+</style>
