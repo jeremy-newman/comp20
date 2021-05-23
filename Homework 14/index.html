@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Stock Ticker</title>
+        <style type="text/css">
+            form {
+                font-size: 24px;
+                text-align: center;
+                box-sizing:border-box;
+                margin-top:10px;
+                margin-bottom:10px;
+                margin-left:20px;
+                width: 700px;
+                margin: 0 auto;
+                font-family: monospace;
+            }
+            h1 {
+                font-size: 20px;
+                text-align: center;
+                background-color: #6495ed;
+                background-size:cover;
+                height:15%;
+                width:100%;
+                padding:35px;
+                box-sizing:border-box;
+                font-family: monospace;
+            }
+            input[type=submit]{
+                background-color: #FFBA49;
+                border: none;
+                font-family: monospace;
+                padding: 15px 15px;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                font-size: 18px;
+                width: 100px;
+                margin: 0 auto;
+            }
+        </style>
+    </head>
+    <body>
+        <!-- header for instructions -->
+        <h1>
+            You can get a company's ticker symbol by typing in the company name
+            OR you can get all company names that use a certain ticker symbol
+            by typing in the ticker symbol.
+        </h1>
+        <br><br>
+        <!-- post to heroku page -->
+        <form method = "post" action = "https://stock-ticker-app1.herokuapp.com/process">
+            Enter a stock ticker or a company name:
+            <p><input type="text"  name = "text"/></p>
+            <!-- radio buttons  -->
+            <input type = "radio" value = "company" name = "c_or_t" checked = "checked"/>Company Name
+            <input type = "radio" value = "ticker" name = "c_or_t"/>Ticker Symbol
+            <p><input type = "submit" value = "Submit" id = "button"></p>
+        </form>
+    </body>
+</html>

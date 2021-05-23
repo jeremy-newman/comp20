@@ -1,0 +1,22 @@
+{
+  "name": "query",
+  "version": "1.0.0",
+  "description": "my stock ticker query app",
+  "main": "query.js",
+  "dependencies": {
+      "mongodb": "*"
+  },
+  "scripts": {
+  "start": "node query.js"
+},
+  "repository": {
+  "type": "git",
+  "url": ""
+},
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+  "url": ""
+},
+  "homepage": ""
+}
