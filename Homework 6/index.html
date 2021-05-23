@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Amicable Numbers</title>
+        <style type="text/css">
+            #header {
+                background-color: #6495ed;
+                padding: 10px;
+                text-align: center;
+                font-size: 40px;
+                font-family: sans-serif;
+            }
+            
+            #form {
+                font-size: 20px;
+                font-family: sans-serif;
+                text-align: center;
+            }
+            #response {
+                font-size: 20px;
+                font-family: sans-serif;
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <div id = "header">
+            Assignment 6: Amicable Numbers
+        </div><br>
+        <div style = "font-size: 20px;font-family: sans-serif;text-align: center;">
+            Check to see if two numbers are amicable!
+        </div><br><br>
+        <form id="form">
+            Number 1:
+            <input type = "text" id = "num1"><br><br>
+            Number 2:
+            <input type = "text" id = "num2"><br><br>
+            <input type = "button" value = "Check if amicable" onclick = "isAmicable()"><br><br>
+        </form>
+        <div id = response></div>
+        <script type="text/javascript">
+            function isAFactor(x, y) {
+                if (y % x == 0) {
+                    return true;
+                }
+                else {
+                    return false;
+                }
+            }
+            function isAmicable() {
+                var x = document.getElementById("num1").value;
+                var y = document.getElementById("num2").value;
+                var x_factors = [1];
+                for (var i = 2; i < x - 1; i++) {
+                    if (isAFactor(i, x)) {
+                        x_factors.push(i);
+                    }
+                }
+                var y_factors = [1];
+                for (var i = 2; i < y - 1; i++) {
+                    if (isAFactor(i, y)) {
+                        y_factors.push(i);
+                    }
+                }
+                var x_sum = x_factors.reduce((a, b) => a + b, 0);
+                var y_sum = y_factors.reduce((a, b) => a + b, 0);
+                var string_x_factors = "Factors of number one: [";
+                var string_y_factors = "Factors of number two: [";
+                for (var i = 0; i < x_factors.length - 1; i++) {
+                    string_x_factors += x_factors[i] + ", "
+                }
+                string_x_factors += x_factors[x_factors.length - 1] + "]";
+                for (var i = 0; i < y_factors.length - 1; i++) {
+                    string_y_factors += y_factors[i] + ", "
+                }
+                string_y_factors += y_factors[y_factors.length - 1] + "]";
+                alert(string_x_factors + "\n" + string_y_factors);
+                if ((x_sum == y) && (y_sum == x)) {
+                    document.getElementById("response").innerHTML = "The numbers: " + x + " and " + y + " are amicable";
+                }
+                else {
+                    document.getElementById("response").innerHTML = "The numbers: " + x + " and " + y + " are not amicable";
+                }
+            }
+        </script>
+    </body>
+</html>
