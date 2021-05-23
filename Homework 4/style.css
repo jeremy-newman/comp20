@@ -1,0 +1,5 @@
+#header {font-size: 30px;display: block;text-align:center;
+    font-family: courier;}
+#receipt {
+    column-count: 2; font-size: 22px;display: block;text-align:left; font-family: monaco;
+}

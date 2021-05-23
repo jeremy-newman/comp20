@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Joe's Hotdogs</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div id ="header">
+            Assignment 4: Joe's Hotdogs<br><br>
+        </div>
+        <div id = "receipt">
+            <script language="javascript">
+                num_hotdogs = prompt("How many Hotdogs would you like?", "");
+                while (!((parseInt(num_hotdogs) || num_hotdogs == 0) && num_hotdogs >= 0)) {
+                    num_hotdogs = prompt("Please enter a valid number. How many Hotdogs would you like?", "");
+                }
+                num_fries = prompt("How many orders of French Fries would you like?", "");
+                while (!((parseInt(num_fries) || num_fries == 0) && num_fries >= 0)) {
+                    num_fries = prompt("Please enter a valid number. How many orders of French Fries would you like?", "");
+                }
+                num_drinks = prompt("How many Drinks would you like?", "");
+                while (!((parseInt(num_drinks) || num_drinks == 0) && num_drinks >= 0)) {
+                    num_drinks = prompt("Please enter a valid number. How many Drinks would you like?", "");
+                }
+                subtotal = (num_hotdogs * 3.25) + (num_fries * 2) + (num_drinks * 1.5);
+                discount = false;
+                if (subtotal >= 20) {
+                    discount = true;
+                    subtotal *= .9;
+                }
+                total = subtotal * 1.0625;
+                document.write("Number of Hotdogs: " + num_hotdogs + "<br/>");
+                document.write("Number of orders of French Fries: " + num_fries + "<br/>");
+                document.write("Number of Drinks: " + num_drinks + "<br/>");
+                if (discount == true) {
+                    document.write("Subtotal: $" + (subtotal / .9).toFixed(2) + "<br/>");
+                    document.write("Subtotal after Joe's Special Discount: $" + subtotal.toFixed(2) + "<br/>");
+                }
+                else {
+                    document.write("Subtotal: $" + subtotal.toFixed(2) + "<br/>");
+                }
+                document.write("Total after tax: $" + total.toFixed(2) + "<br/>");
+            </script>
+        </div>
+    </body>
+</html>
