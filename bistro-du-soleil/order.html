@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8">
+        <title>Bistro-Du-Soleil</title>
+        <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+        <link rel='stylesheet' type="text/css" href="style.css" />
+        <style type="text/css">
+
+        </style>
+    </head>
+    <body>
+        <script language="javascript">
+
+            function Food(name, extra_cost)
+            {
+                this.name = name;
+                this.extra_cost = extra_cost;
+            }
+
+            appItems = new Array(
+                new Food("Bacon Wrapped Scallops in Mild Citrus Glaze", 0),
+                new Food("Gorgonzola, Baby Arugula Salad with Sliced Apples, " +
+                "Dried Tart Cherries, Golden Raisins, Cranberries & " +
+                "Dijon Vinaigrette", 0),
+                new Food("Sausage & Peppers al Italiano", 0),
+                new Food("Lobster Bisque", 0),
+                new Food("Cream of Asparagus", 0),
+                new Food("Chicken Empanadas & Pico de Gallo", 0),
+                new Food("Tapenade, Hummus & Baba Ghanoush with Grilled Pita", 0),
+                new Food("Coconut Shrimp & Peanut Dipping sauce", 0),
+                new Food("Crab Cakes & Arugula", 0)
+            );
+
+            accItems = new Array(
+                new Food("Oven Baked Smashed Potatoes", 0),
+                new Food("Buttered Egg Noodles & Parsley", 0),
+                new Food("Cauliflower au Gratin", 0),
+                new Food("Macaroni au Gratin", 0),
+                new Food("Sweet Potatoes & Apples", 0),
+                new Food("Braised Brussel Sprouts", 0),
+                new Food("Poached Asparagus and Aioli", 0)
+            );
+
+            prinItems = new Array(
+                new Food("Coq au Vin", 0),
+                new Food("Pork Osso Buco", 0),
+                new Food("Chicken Marsala", 0),
+                new Food("Margarita Quiche Sautéed Cherry Tomatoes, caramelized Sweet Onions, Fresh Mozzarella & Basil", 0),
+                new Food("Beef Lasagna", 0),
+                new Food("Sole Florentine", 0),
+                new Food("Wild Atlantic Salmon Livornese", 0),
+                new Food("Braised Beef Short Ribs", 0),
+                new Food("Seared Sesame Crusted Sushi Grade Tuna Steaks", 3),
+                new Food("Filet Bourguignon", 2),
+                new Food("Grilled Bacon Wrapped Filet Mignon & Sautéed Mushroom", 4)
+            );
+
+            dessItems = new Array(
+                new Food("White Chocolate Mascarpone Limoncello Cake", 0),
+                new Food("Chocolate Hazelnut Torte Gianduia", 0),
+                new Food("Tiramisu", 0),
+                new Food("Crisp Vanilla Cannoli", 0),
+                new Food("Rich Flourless Chocolate Truffle Cake", 0),
+                new Food("Brandied Carrot Cake", 0),
+                new Food("Creme Brûlée Cheesecake", 0),
+                new Food("European Ricotta Pistachio Cake", 0),
+                new Food("Crisp Vanilla Mascarpone Cannoli", 0),
+                new Food("Chocolate Chip Cookies (fresh cookie dough to make at home)", 0)
+            );
+
+        </script>
+        <!-- header section -->
+              <div id='header'>
+                <div id='header'>
+                  <a href="index.html">
+                    <div>
+                      <img src="logo.png" alt="Bistro-Du-Soleil Logo" class="logo">
+                    </div>
+
+                  </a>
+                  </div>
+                  <a href="menu.html">Menu</a>
+                  <a href="res.html">Reservations</a>
+                  <a class="selected" href="order.html">Order</a>
+      						<a href="abt.html">About Us</a>
+                  <a href="art.html">Featured Artists</a>
+                  <a href="catering.html">Catering</a>
+              </div>
+
+        <!-- ordering header section -->
+            <div id="pre-title">
+                    <h1>Order Now</h1>
+            </div>
+            <div class="menu">
+                <form onsubmit="return validate()">
+                    <span id="section_header">
+                        Personal Information
+                    </span>
+                    <h2> Name of Party*: <input type="text" name='name' style="font-size:1em;"/></h2>
+                    <h2> Number of Guests*: <input type="number" name='num_guests' style="font-size:1em;"/></h2>
+                    <h2> Phone Number*: <input type="text" name='phone' style="font-size:1em;"/></h2>
+                    <div id="column4">
+                        <span id="section_header">
+                            Appetizers
+                        </span>
+                        </br></br>
+                        <span style="font-size:25px">
+                            <script language="javascript">
+                                var post = "";
+                                for (i=0; i<appItems.length; i++) {
+                                    post += appItems[i].name + "</br>";
+                                    post += "<select id='app" + i + "' size ='1' style='font-size:1em;'>";
+                                    for (j=0; j < 10; j++) {
+                                        post += "<option>" + j + "</option>";
+                                    }
+                                    post += "</select></br></br>";
+                                }
+                                document.writeln(post);
+                            </script>
+                        </span>
+                        </br></br>
+                        <span id="section_header">
+                            Le Plat Principal
+                        </span>
+                        </br></br>
+                        <span style="font-size:25px">
+                            <script language="javascript">
+                                var post = "";
+                                for (i=0; i<prinItems.length; i++) {
+                                    post += prinItems[i].name + "</br>";
+                                    post += "<select id='prin" + i + "' size ='1' style='font-size:1em;'>";
+                                    for (j=0; j < 10; j++) {
+                                        post += "<option>" + j + "</option>";
+                                    }
+                                    post += "</select></br></br>";
+                                }
+                                document.writeln(post);
+                        </script>
+                        </span>
+                    </div>
+                    <div id="column4">
+                        <span id="section_header">
+                            Plat d'Accompagnement
+                        </span>
+                        </br></br>
+                        <span style="font-size:25px">
+                            <script language="javascript">
+                                var post = "";
+                                for (i=0; i<accItems.length; i++) {
+                                    post += accItems[i].name + "</br>";
+                                    post += "<select id='acc" + i + "' size ='1' style='font-size:1em;'>";
+                                    for (j=0; j < 10; j++) {
+                                        post += "<option>" + j + "</option>";
+                                    }
+                                    post += "</select></br></br>";
+                                }
+                                document.writeln(post);
+                            </script>
+                        </span>
+                        </br></br>
+                        <span id="section_header">
+                            Desserts
+                        </span>
+                        </br></br>
+                        <span style="font-size:25px">
+                            <script language="javascript">
+                                var post = "";
+                                for (i=0; i<dessItems.length; i++) {
+                                    post += dessItems[i].name + "</br>";
+                                    post += "<select id='dess" + i + "' size ='1' style='font-size:1em;'>";
+                                    for (j=0; j < 10; j++) {
+                                        post += "<option>" + j + "</option>";
+                                    }
+                                    post += "</select></br></br>";
+                                }
+                                document.writeln(post);
+                        </script>
+                        </span>
+                    </div>
+
+                    <script language="javascript">
+
+                        $(document).ready(function(){
+
+                            $("[name|='num_guests']").change(function(){
+                                printTotals();
+                    		});
+
+                            $("#prin8").change(function(){
+                                printTotals();
+                    		});
+
+                            $("#prin9").change(function(){
+                                printTotals();
+                    		});
+
+                            $("#prin10").change(function(){
+                                printTotals();
+                    		});
+
+                            function printTotals() {
+                                add_costs = 0;
+
+                                add_costs += 3 * document.getElementById("prin8").selectedIndex;
+                                add_costs += 2 * document.getElementById("prin9").selectedIndex;
+                                add_costs += 4 * document.getElementById("prin10").selectedIndex;
+
+                                subtotal = parseFloat(35 * document.forms[0].num_guests.value) + parseFloat(add_costs);
+                                document.forms[0].subtotal.value = subtotal.toFixed(2);
+                                tax = .0735 * document.forms[0].subtotal.value;
+                                document.forms[0].tax.value = tax.toFixed(2);
+                                total = 1.0735 * document.forms[0].subtotal.value;
+                                document.forms[0].total.value = total.toFixed(2);
+                            }
+
+                        });
+
+                    </script>
+
+                    <script language="javascript">
+                        function validate() {
+
+                            if (document.forms[0].name.value == "") {
+                    			alert("Please enter a party name:");
+                    			document.forms[0].name.focus();
+                    			document.forms[0].name.select();
+                    			return false;
+                    		}
+
+                            if (document.forms[0].num_guests.value == "") {
+                    			alert("Please enter the number of people in the order:");
+                    			document.forms[0].num_guests.focus();
+                    			document.forms[0].num_guests.select();
+                    			return false;
+                    		}
+
+                            if (document.forms[0].num_guests.value <= 0) {
+                                alert("Please enter a positive number of people in the order:");
+                    			document.forms[0].num_guests.focus();
+                    			document.forms[0].num_guests.select();
+                    			return false;
+                            }
+
+                            regex = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/;
+
+                            if (document.forms[0].phone.value == "") {
+                    			alert("Please enter your phone number:");
+                    			document.forms[0].phone.focus();
+                    			document.forms[0].phone.select();
+                    			return false;
+                    		} else if (!document.forms[0].phone.value.match(regex)) {
+                    			alert("Enter a valid phone number: (xxxxxxxxxx)");
+                    			document.forms[0].phone.focus();
+                    			document.forms[0].phone.select();
+                    			return false;
+                    		}
+
+                            appCount = 0;
+                            prinCount = 0;
+                            accCount = 0;
+                            dessCount = 0;
+                            c = [true, true, true, true];
+
+                            for (i=0; i<appItems.length; i++) {
+                                appCount += document.getElementById("app" + i).selectedIndex;
+                            }
+
+                            if (appCount < document.forms[0].num_guests.value) {
+                                diff = document.forms[0].num_guests.value - appCount;
+                                c[0] = confirm("You can still order " + diff + " more appetizers, is this your final order?");
+                                if(c[0] == false) {
+                                    return false
+                                }
+
+                            } else if (appCount > document.forms[0].num_guests.value) {
+                                alert("You ordered too many appetizers for the number of guests. " +
+                                "Please check your order and have the number of guests match the amount ordered in each section.");
+                                return false;
+                            }
+
+                            for (i=0; i<prinItems.length; i++) {
+                                prinCount += document.getElementById("prin" + i).selectedIndex;
+                            }
+
+                            if (prinCount < document.forms[0].num_guests.value) {
+                                diff = document.forms[0].num_guests.value - prinCount;
+                                c[1] = confirm("You can still order " + diff + " more plats principaux, is this your final order?");
+                                if(c[1] == false) {
+                                    return false
+                                }
+                            } else if (prinCount > document.forms[0].num_guests.value) {
+                                alert("You ordered too many plats principaux for the number of guests. " +
+                                "Please check your order and have the number of guests match the amount ordered in each section.");
+                                return false;
+                            }
+
+                            for (i=0; i<accItems.length; i++) {
+                                accCount += document.getElementById("acc" + i).selectedIndex;
+                            }
+
+                            if (accCount < document.forms[0].num_guests.value) {
+                                diff = document.forms[0].num_guests.value - accCount;
+                                c[2] = confirm("You can still order " + diff + " more plats d'accompagnement, is this your final order?");
+                                if(c[2] == false) {
+                                    return false
+                                }
+                            } else if (accCount > document.forms[0].num_guests.value) {
+                                alert("You ordered too many plats d'accompagnement for the number of guests. " +
+                                "Please check your order and have the number of guests match the amount ordered in each section.");
+                                return false;
+                            }
+
+                            for (i=0; i<dessItems.length; i++) {
+                                dessCount += document.getElementById("dess" + i).selectedIndex;
+                            }
+
+                            if (dessCount < document.forms[0].num_guests.value) {
+                                diff = document.forms[0].num_guests.value - dessCount;
+                                c[3] = confirm("You can still order " + diff + " more desserts, is this your final order?");
+                                if(c[3] == false) {
+                                    return false
+                                }
+                            } else if (dessCount > document.forms[0].num_guests.value) {
+                                alert("You ordered too many desserts for the number of guests. " +
+                                "Please check your order and have the number of guests match the amount ordered in each section.");
+                                return false;
+                            }
+
+                            return true;
+
+                        }
+                    </script>
+
+                    <div class="below">
+                        <h2> Subtotal: $<input type="text" name='subtotal' style="font-size:1em;"/></h2>
+                        <h2> Connecticut Tax (7.35%): $<input type="text" name='tax' style="font-size:1em;"/></h2>
+                        <h2> Total Cost: $<input type="text" name='total' style="font-size:1em;"/></h2>
+                        <input type = "submit" value = "Make Order"/>
+                    </div>
+                </form>
+            </div>
+            <div id="footer">
+                <div class= 'contact-info'>
+                    (203) 557-6314&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+                    bistrodusoleil@aol.com&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+                    615 Riverside Avenue Westport, CT 06880&nbsp;&nbsp;&nbsp;|
+                    <a style= "font-size: 20px;" class="selected" href="order.html">Order</a>
+                </div>
+            </div>
+    </body>
+
+  </html>
