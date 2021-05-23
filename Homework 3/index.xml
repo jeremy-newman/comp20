@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/css" href="style.css"?>
+<setlist>
+    <header>Assignment 3: Cover Band Setlist
+    </header>
+	<song>
+        <title>Fearless</title>
+        <info>
+            <artist>Taylor Swift</artist>
+            <release_year>2008</release_year>
+        </info>
+        <genre>Country</genre>
+    </song>
+    <song>
+        <title>Evil Woman</title>
+        <info>
+            <artist>Electric Light Orchestra</artist>
+            <release_year>1975</release_year>
+        </info>
+        <genre>Blues Rock</genre>
+    </song>
+    <song>
+        <title>Thinking Out Loud</title>
+        <info>
+            <artist>Ed Sheeran</artist>
+            <release_year>2014</release_year>
+        </info>
+        <genre>Pop</genre>
+    </song>
+    <song>
+        <title>The Longest Time</title>
+        <info>
+            <artist>Billy Joel</artist>
+            <release_year>1983</release_year>
+        </info>
+        <genre>Doo-wop</genre>
+    </song>
+    <song>
+        <title>Fool in the Rain</title>
+        <info>
+            <artist>Led Zeppelin</artist>
+            <release_year>1979</release_year>
+        </info>
+        <genre>Rock</genre>
+    </song>
+    <song>
+        <title>Dream On</title>
+        <info>
+            <artist>Aerosmith</artist>
+            <release_year>1973</release_year>
+        </info>
+        <genre>Rock</genre>
+    </song>
+    <song>
+        <title>Black Smoke Rising</title>
+        <info>
+            <artist>Greta Van Fleet</artist>
+            <release_year>2017</release_year>
+        </info>
+        <genre>Rock</genre>
+    </song>
+    <song>
+        <title>Fitzpleasure</title>
+        <info>
+            <artist>Alt-J</artist>
+            <release_year>2012</release_year>
+        </info>
+        <genre>Alternative</genre>
+    </song>
+    <song>
+        <title>25 or 6 to 4</title>
+        <info>
+            <artist>Chicago</artist>
+            <release_year>1970</release_year>
+        </info>
+        <genre>Classic Rock</genre>
+    </song>
+    <song>
+        <title>Let it Be</title>
+        <info>
+            <artist>The Beatles</artist>
+            <release_year>1970</release_year>
+        </info>
+        <genre>Classic Rock</genre>
+    </song>
+</setlist>

@@ -1,0 +1,9 @@
+header {font-size: 30px;display: block;text-align:center;
+    font-family: courier;}
+song {display:block; border-bottom: 1px solid #1E3FD1;
+padding : 8px 30px; font-family:monospace;}
+title {font-size: 26px; font-weight: 700;}
+info {display: block;}
+release_year::before {content: "(";}
+release_year::after {content: ")";}
+genre::before {content: "Genre: ";}
