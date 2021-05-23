@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Joe's Supreme Hotdogs</title>
+        <style type="text/css">
+            #header {
+                background-color: #6495ed;
+                padding: 10px;
+                text-align: center;
+                font-size: 40px;
+                font-family: sans-serif;
+            }
+            #form {
+                font-size: 30px;
+                font-family: sans-serif;
+                text-align: center;
+            }
+            #hotdogs,#fries,#sodas {
+                font-size: 20px;
+            }
+            #error {
+                color: #ff0000;
+                display: none;
+            }
+        </style>
+    </head>
+    <body>
+        <div id = "header">
+            Assignment 7: Joe's Supreme Hotdogs
+        </div><br>
+        <div style = "font-size: 30px;font-family: sans-serif;text-align: center;">
+            <strong>Please place your order below!</strong>
+        </div><br><br>
+        <form onsubmit="return validate()" id = "form">
+            Hotdogs: $3.25<br>
+            <select id = "hotdogs" size = "1"><br><br>
+                <option value = "0">0</option>
+                <option value = "1">1</option>
+                <option value = "2">2</option>
+                <option value = "3">3</option>
+                <option value = "4">4</option>
+                <option value = "5">5</option>
+                <option value = "10">10</option>
+                <option value = "15">15</option>
+                <option value = "20">20</option>
+            </select><br>
+            French Fries: $2.00<br>
+            <select id = "fries" size = "1"><br><br>
+                <option value = "0">0</option>
+                <option value = "1">1</option>
+                <option value = "2">2</option>
+                <option value = "3">3</option>
+                <option value = "4">4</option>
+                <option value = "5">5</option>
+                <option value = "10">10</option>
+                <option value = "15">15</option>
+                <option value = "20">20</option>
+            </select><br>
+            Sodas: $1.50<br>
+            <select id = "sodas" size = "1"><br><br>
+                <option value = "0">0</option>
+                <option value = "1">1</option>
+                <option value = "2">2</option>
+                <option value = "3">3</option>
+                <option value = "4">4</option>
+                <option value = "5">5</option>
+                <option value = "10">10</option>
+                <option value = "15">15</option>
+                <option value = "20">20</option>
+            </select><br><br>
+            <div id = "error">You must order an item!</div><br><br>
+            <button type = "submit" value = "Submit">Submit Order</button>
+        </form>
+        <script language="javascript">
+            function validate() {
+                var validated = true;
+                if ((document.getElementById("hotdogs").value == "0") &&
+                (document.getElementById("fries").value == "0") &&
+                (document.getElementById("sodas").value == "0")) {
+                    document.getElementById("error").style.display = "inline-block";
+                    validated = false;
+                }
+                else {
+                    tallyOrder();
+                }
+                return validated;
+            }
+            function tallyOrder() {
+                var num_hotdogs = document.getElementById("hotdogs").value;
+                var num_fries = document.getElementById("fries").value;
+                var num_sodas = document.getElementById("sodas").value;    
+                var subtotal = (num_hotdogs * 3.25) + (num_fries * 2) + (num_sodas * 1.5);
+                var alert_message = "Number of Hotdogs: " + num_hotdogs + "\n"
+                + "Number of orders of French Fries: " + num_fries + "\n"
+                + "Number of Sodas: " + num_sodas + "\n" + "Subtotal: $" 
+                + subtotal.toFixed(2) + "\n";
+                var discount = false;
+                if (subtotal >= 20) {
+                    discount = true;
+                    subtotal *= .9;
+                }
+                var total = subtotal * 1.0625;
+                if (discount) {
+                    alert_message += "Subtotal after Joe's Special Discount: $" + subtotal.toFixed(2) + "\n";
+                }
+                alert_message += "Total after tax: $" + total.toFixed(2) + "\n";
+                alert(alert_message);
+            }
+        </script>
+    </body>
+</html>
